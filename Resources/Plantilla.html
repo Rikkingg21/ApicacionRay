@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprobante de Venta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            justify-content: right;
+        }
+
+        .centrar {
+            width: 72mm;
+            text-align: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .user {
+            text-align: left;
+        }
+
+        .marco {
+            width: 75mm;
+            position: relative;
+            top: 0;
+            left: 0px;
+        }
+
+        p {
+            width: 72mm;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 5px;
+        }
+
+        .tablita {
+            position: absolute;
+        }
+
+        table {
+            max-width: 72mm;
+            width: 72mm;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0;
+        }
+        .tablitaproduc {
+            position: absolute;
+        }
+
+        .tablitapres {
+            position: absolute;
+        }
+
+        th, td {
+            max-width: 2mm;
+            word-wrap: break-word;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .right-align {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="marco">
+        <section class="centrar">
+            <br />
+            <br />
+            <br />
+            <p>@NombreEmpresa</p>
+            <p>RUC: @RUCempresa</p>
+            <p>@Correo</p>
+            <p>
+                <b>@TipoComprobante</b>
+            </p>
+            <p>N° @lblIDcomprobanteMasUno</p>
+            <p>Fecha: @lblFecha</p>
+            <p>Tipo de pago: @tipoPagoSeleccionado</p>
+            <div class="user">
+                <p>---------------------------------------------------</p>
+                <p>DNI: @txtDNI</p>
+                <p>Nombre: @lblCliente</p>
+                <p>---------------------------------------------------</p>
+            </div>
+        </section>
+
+        <table class="tablita" style="max-width:72mm">
+            <tr><td colspan="2" height="20"></td></tr>
+            <tr  colspan="2"></tr>
+            <thead>
+                <tr>
+                    <th>PRODUCTO</th>
+                    
+                    <th class="right-align">PRECIO</th>
+                </tr>
+                @Filas
+            </thead>
+        </table>
+        <table class="tablita" style="max-width:72mm">
+            <tr><td colspan="3" height="20"></td></tr>
+            <tbody style="max-width: 72mm; word-wrap: break-word; padding: 8px; text-align: left;">
+                
+                <tr>
+                    <td></td>
+                    <td class="right-align">Sub Total:</td>
+                    <td class="right-align">@lblSubTotal</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="right-align">I.G.V.(18%):</td>
+                    <td class="right-align">@lblIGV</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="right-align">
+                        <b>Total:</b>
+                    </td>
+                    <td class="right-align">
+                        <b>@lblSumaPrecio</b>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section class="centrar">
+            <p>---------------------------------------------------</p>
+            <p>Representación impresa de @TipoComprobante</p>
+            <p>Cajero: @lblUsuario</p>
+            <p>No se aceptan cambios ni devoluciones</p>
+            <p>
+                <b>¡GRACIAS POR SU COMPRA!</b>
+            </p>
+            <p></p>
+            <p></p>
+            <p style="color: white">.</p>
+        </section>
+    </div>
+</body>
+</html>
